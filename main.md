@@ -42,21 +42,22 @@ Python имеет несколько библиотек для создания 
 ## Примеры
 
 # Обычная кнопка
+```python
+# импортируем модули
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.button import Button
 
-    # импортируем модули
-    from kivy.app import App
-    from kivy.uix.boxlayout import BoxLayout
-    from kivy.uix.button import Button
+# создаем класс,который унаследует "App"
+class MyApp(App):
 
-    # создаем класс,который унаследует "App"
-    class MyApp(App):
+    def build(self):
+        bx = BoxLayout(orientation = "horizontal")
 
-        def build(self):
-            bx = BoxLayout(orientation = "horizontal")
-
-            bx.add_widget(Button(text = "Text"))
+        bx.add_widget(Button(text = "Text"))
             
-            return bx
+        return bx
 
-    if __name__=="__main__":
-        MyApp().run()
+if __name__=="__main__":
+    MyApp().run()
+```
